@@ -1,6 +1,4 @@
-# 🛸 AlienTest — Misión NASA: 
-
-Pruebas Unitarias con JUnit 5
+# 🛸 AlienTest — Misión NASA: Pruebas Unitarias con JUnit 5
 
 **UP05 – Entornos de Desarrollo | IES Mutxamel | Curso 2025/2026**  
 **Alumna:** Manuela Planelles Lucas
