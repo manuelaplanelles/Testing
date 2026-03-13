@@ -71,10 +71,10 @@ public class CalculadoraMPLTest {
 
 
 **Resultado — Tests fallando (errores detectados)**  
-![Ejercicio 1 - tests fallando](screenshots/ej1_tests_fallando.png)
+![Ejercicio 1 - tests fallando](img/error-detectado.png)
 
 **Resultado — Tests corregidos**  
-![Ejercicio 1 - tests en verde](screenshots/ej1_tests_verde.png)
+![Ejercicio 1 - tests en verde]()
 
 ---
 
