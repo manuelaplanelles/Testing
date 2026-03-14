@@ -27,9 +27,16 @@ public class Calculadora {
     }
 
     public int divide() {
-        // Error introducido de forma intencionada para detectarlo con JUnit
+        /*Error introducido de forma intencionada para detectarlo con JUnit
         int resultado = primerNumero / segundoNumero;
         return resultado;
+         */
+        if (segundoNumero == 0) {
+            throw new ArithmeticException("División por 0");
+        } else {
+            int resultado = primerNumero / segundoNumero;
+            return resultado;
+        }
     }
 }
 
