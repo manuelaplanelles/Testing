@@ -80,7 +80,72 @@ public class CalculadoraMPLTest {
 
 ## Ejercicio 2
 
-*(pendiente)*
+> _Aprender a distinguir entre fallo y error en JUnit. Reescribir `divide()` para que lance una excepción cuando el divisor es 0, y crear un test que verifique que esa excepción se lanza correctamente._
+
+**Por qué es importante**  
+En testing es fundamental distinguir entre un **fallo** (el programa se ejecuta pero devuelve un resultado incorrecto) y un **error** (el programa se detiene porque se produce una excepción). Saber verificar que las excepciones se lanzan correctamente es una habilidad esencial para garantizar que el código se comporta de forma segura ante datos incorrectos.
+
+**Pasos realizados**
+
+1. Modificación de `divide()` en `Calculadora.java` para lanzar `ArithmeticException` si el divisor es 0
+2. Modificación de `testDivide()` para usar valores sin riesgo de división por 0
+3. Creación de `testDivideExcepcion()` que verifica que la excepción se lanza correctamente
+4. Ejecución → 5 tests en verde
+5. Forzado de fallo cambiando el mensaje esperado → JUnit detecta la discrepancia
+6. Corrección y ejecución final → 5 tests en verde
+
+**Código — Calculadora.java (método divide)**
+
+<details>
+<summary>Ver el código completo</summary>
+  
+```java
+public int divide() {
+    if (segundoNumero == 0) {
+        throw new ArithmeticException("División por 0");
+    } else {
+        int resultado = primerNumero / segundoNumero;
+        return resultado;
+    }
+}
+```
+</details>
+
+**Código — CalculadoraMPLTest.java (tests añadidos)**
+
+<details>
+<summary>Ver el código completo</summary>
+  
+```java
+@Test
+public void testDivide() {
+    Calculadora calc = new Calculadora(30, 10);
+    int valorEsperado = 3;
+    int valorObtenido = calc.divide();
+    assertEquals(valorEsperado, valorObtenido);
+}
+
+@Test
+public void testDivideExcepcion() {
+    Calculadora calc = new Calculadora(30, 0);
+    String valorEsperado = "División por 0";
+    String valorDevuelto = "";
+    try {
+        calc.divide();
+    } catch (ArithmeticException e) {
+        valorDevuelto = e.getMessage();
+    }
+    assertEquals(valorEsperado, valorDevuelto);
+}
+
+```
+</details>
+
+**Resultado — Fallo forzado**  
+![Ejercicio 2 - fallo forzado](img/test-divcero)
+
+**Resultado — 5 tests en verde**  
+![Ejercicio 2 - tests en verde](img/test-div0)
 
 ---
 
