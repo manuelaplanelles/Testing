@@ -149,7 +149,84 @@ public void testDivideExcepcion() {
 
 ## Ejercicio 3
 
-*(pendiente)*
+> _Modificar la clase de pruebas para usar `@BeforeEach` y `@AfterEach`, eliminando la creación repetida del objeto `Calculadora` dentro de cada test._
+
+En proyectos reales los tests comparten recursos: conexiones a bases de datos, objetos complejos, ficheros. Repetir la inicialización en cada test es código duplicado y difícil de mantener. `@BeforeEach` y `@AfterEach` permiten centralizar esa lógica, haciendo los tests más limpios y fáciles de modificar.
+
+**Pasos realizados**
+
+1. Declaración de `calc` como atributo privado de la clase
+2. Creación de `inicioPruebas()` con `@BeforeEach` — se ejecuta antes de cada test
+3. Creación de `finPruebas()` con `@AfterEach` — libera el objeto al terminar cada test
+4. Eliminación de `new Calculadora` dentro de cada test
+5. `testDivideExcepcion()` mantiene su propio objeto `calcCero` ya que necesita divisor 0
+6. Ejecución → 5 tests en verde
+
+**Código — CalculadoraMPLTest.java**
+
+<details>
+<summary>Ver el código completo</summary>
+  
+```java
+package org.ejercicio;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class CalculadoraMPLTest {
+
+    private Calculadora calc;
+
+    @BeforeEach
+    public void inicioPruebas() {
+        calc = new Calculadora(30, 10);
+    }
+
+    @AfterEach
+    public void finPruebas() {
+        calc = null;
+    }
+
+    @Test
+    public void testSuma() {
+        assertEquals(40, calc.suma());
+    }
+
+    @Test
+    public void testResta() {
+        assertEquals(20, calc.resta());
+    }
+
+    @Test
+    public void testMultiplica() {
+        assertEquals(300, calc.multiplica());
+    }
+
+    @Test
+    public void testDivide() {
+        assertEquals(3, calc.divide());
+    }
+
+    @Test
+    public void testDivideExcepcion() {
+        Calculadora calcCero = new Calculadora(30, 0);
+        String valorEsperado = "División por 0";
+        String valorDevuelto = "";
+        try {
+            calcCero.divide();
+        } catch (ArithmeticException e) {
+            valorDevuelto = e.getMessage();
+        }
+        assertEquals(valorEsperado, valorDevuelto);
+    }
+}
+```
+</details>
+
+**Resultado — 5 tests en verde**  
+![Ejercicio 3 - tests en verde](img/ejercicio3.png)
 
 ---
 
