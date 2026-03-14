@@ -232,7 +232,46 @@ public class CalculadoraMPLTest {
 
 ## Ejercicio 4
 
-*(pendiente)*
+> _Crear tests parametrizados para los métodos de la clase `Calculadora` utilizando `@ValueSource` y `@CsvSource`._
+ 
+En testing profesional es habitual probar el mismo método con múltiples combinaciones de datos. Repetir un test por cada combinación genera código duplicado y difícil de mantener. Los tests parametrizados permiten definir los datos por separado y ejecutar el mismo test automáticamente para cada caso, reduciendo código y aumentando la cobertura.
+
+**Pasos realizados**
+
+1. Añadida dependencia `junit-jupiter-params` en `pom.xml`
+2. Creación de `testSumaConValueSource()` con `@ValueSource` — ejecuta el test con 5 valores distintos
+3. Creación de `testSumaConCsvSource()` con `@CsvSource` — ejecuta el test con 4 combinaciones de entrada y resultado esperado
+4. Ejecución → todos los subtests en verde
+
+**Código — tests añadidos**
+
+<details>
+<summary>Ver el código completo</summary>
+  
+```java
+@ParameterizedTest
+@ValueSource(ints = {1, 2, 3, 4, 5})
+public void testSumaConValueSource(int num) {
+    Calculadora c = new Calculadora(num, 5);
+    assertEquals(num + 5, c.suma());
+}
+
+@ParameterizedTest
+@CsvSource({
+    "1, 2, 3",
+    "4, 5, 9",
+    "-1, -2, -3",
+    "0, 0, 0"
+})
+public void testSumaConCsvSource(int a, int b, int valorEsperado) {
+    Calculadora c = new Calculadora(a, b);
+    assertEquals(valorEsperado, c.suma());
+}
+```
+</details>
+
+**Resultado — tests parametrizados en verde**  
+![Ejercicio 4 - tests parametrizados](img/ejercicio4.png)
 
 ---
 
