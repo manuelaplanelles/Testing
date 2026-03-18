@@ -1,4 +1,5 @@
-package ra04_gestion_datos_y_aplicaciones.u07_coleccioneDinámicasDatos.Maps;
+package DiccionarioTest;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
