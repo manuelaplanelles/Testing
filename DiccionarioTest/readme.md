@@ -230,6 +230,17 @@ Resultado obtenido con **Run with Coverage**:
 - Maven
 - IntelliJ IDEA
 
+---
+
+## Conclusión
+**Autora:** Manuela Planelles Lucas
+
+Esta práctica ha resultado diferente a las anteriores. La clase `Diccionario` presenta un método público, `nuevoPar()`, que está vacío — no tiene implementación. Sin embargo, el test no ha dado error porque el test no comprueba que el método *haga* algo, sino que verifica que el diccionario no cambia de tamaño después de llamarlo. Como el método no hace nada, el tamaño efectivamente no cambia, y el test pasa. Esto ilustra un concepto importante: un test en verde no siempre significa que el código funciona bien, sino que se comporta exactamente como el test espera — en este caso, que no hace nada.
+
+Otro aspecto a tener en cuenta es la cobertura real del método `traduce()`. El diccionario contiene cerca de mil palabras, y en los tests solo se han comprobado dos casos: una palabra existente y una inexistente. En un entorno profesional sería recomendable ampliar la batería de tests con más palabras, o incluso recorrer todo el diccionario verificando que cada traducción es correcta. Esto aumentaría significativamente la confianza en el método.
+
+Por último, hasta ahora los tests se habían realizado principalmente con `assertEquals`. En esta práctica se han utilizado otras assertions como `assertNull`, `assertTrue` y `assertThrows`, cada una adecuada para un tipo de comprobación diferente. Conocer estas herramientas permite diseñar tests más precisos y adaptados a cada situación.
 
 **1º DAW – Entornos de Desarrollo | IES Mutxamel | Curso 2025/2026**  
-**Autora:** Manuela Planelles Lucas
+
+
