@@ -2,8 +2,6 @@
 
 Proyecto práctico sobre pruebas unitarias en Java utilizando JUnit 5. Se trabaja sobre una clase `Calculadora` que contiene errores introducidos intencionadamente, con el objetivo de aprender a detectarlos, analizarlos y corregirlos mediante tests automatizados. El proyecto progresa desde tests básicos hasta técnicas avanzadas como parametrización y suites de pruebas.
 
----
-
 ## Índice
 
 - [Ejercicio 1 — Tests básicos y detección de errores](#ejercicio-1)
