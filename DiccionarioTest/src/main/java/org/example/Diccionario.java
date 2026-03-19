@@ -1,4 +1,4 @@
-package DiccionarioTest.src.main.java.org;
+package org.example;
 
 import java.util.ArrayList;
 import java.util.HashMap;

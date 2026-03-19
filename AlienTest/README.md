@@ -9,8 +9,8 @@
 
 Proyecto de pruebas unitarias desarrollado como parte de la práctica UP05 de la asignatura Entornos de Desarrollo. El objetivo ha sido verificar el correcto funcionamiento de la clase `Alien`, encargada de registrar especies biológicas externas detectadas por sondas espaciales, utilizando JUnit 5 dentro del entorno IntelliJ IDEA.
 
-📄 [Memoria completa del proyecto](./JUnit_MisionLaNase_ManuelaPlanelles.pdf)  
-📄 [Enunciado de la práctica](./UP5_Tarea_UnitTest.pdf)
+📄 [Memoria completa del proyecto](../AlienTest1/JUnit_MisionLaNase_ManuelaPlanelles.pdf)  
+📄 [Enunciado de la práctica](../AlienTest1/UP5_Tarea_UnitTest.pdf)
 
 ---
 
