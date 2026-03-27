@@ -1,6 +1,6 @@
 package org.example;
 
-import static org.example.P16_Mercadaw.AppZonaClientes.imprimirProductos;
+import static org.example.AppZonaClientes.imprimirProductos;
 
 public class Cliente {
     private String usuario;
