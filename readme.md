@@ -37,6 +37,13 @@ Pruebas unitarias sobre la aplicación Mercadaw, un sistema de compra online. Se
 
 ---
 
+### [BancoTest](https://github.com/manuelaplanelles/Testing/tree/main/BancoTest)
+Pruebas de integración sobre una aplicación bancaria simulada utilizando Mockito. Se sustituye la capa de acceso a datos por un mock, permitiendo testear la lógica de negocio de forma aislada. Cubre depósitos, retiradas, consulta de saldo y manejo de excepciones.
+
+**Conceptos aplicados:** `@Mock`, `@InjectMocks`, `@Spy`, `verify`, `when/thenReturn`, `InOrder`, `assertThrows`, pruebas de integración con Mockito.
+
+---
+
 ## Tecnologías
 
 - Java 21
