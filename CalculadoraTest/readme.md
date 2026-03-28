@@ -359,7 +359,6 @@ Las pruebas unitarias ocupan la base porque son el primer nivel de confianza: si
 
 Como extensión de este proyecto, se ha configurado Mockito para realizar pruebas de integración sobre la clase `CalculadoraService`, que depende de una interfaz `Repositorio` para obtener datos externos.
 
-**Por qué es importante**  
 `CalculadoraService` no puede probarse directamente sin un repositorio real. Mockito permite sustituir esa dependencia por un objeto simulado, controlando los valores que devuelve y verificando que la clase los usa correctamente.
 
 **Clases creadas**
