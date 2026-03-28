@@ -10,6 +10,7 @@ Proyecto práctico sobre pruebas unitarias en Java utilizando JUnit 5. Se trabaj
 - [Ejercicio 4 — Tests parametrizados](#ejercicio-4)
 - [Ejercicio 5 — Suite de pruebas](#ejercicio-5)
 - [Ejercicio 6 — Reflexión y pirámide de testing](#ejercicio-6)
+- [Mockito — Pruebas de Integración](#mockito--pruebas-de-integración)
 
 ---
 
@@ -482,6 +483,7 @@ public class CalculadoraServiceTest {
 
 - Java 21
 - JUnit 5
+- Mockito 5.12.0
 - Maven
 - IntelliJ IDEA
 
